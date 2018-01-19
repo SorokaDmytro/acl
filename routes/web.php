@@ -15,15 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/', function () {
-//   return view('welcome');
-// });
-
-// Route::get('/', ['as' => 'frontpage', 'uses' => 'ReportController@index']);
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/config', 'ConfigController@index')->name('config');
+
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-Route::get('/reports', 'ReportController@index')->name('reports');
+// Route::get('/reports', 'ReportController@index')->name('reports');
+// Route::get('/config', 'ConfigController@index')->name('config');
+
+Route::group(['middleware' => 'checkemployeerole'], function () {
+  Route::get('/reports', 'ReportController@index')->name('reports');
+});
+
+Route::group(['middleware' => 'checkadminrole'], function () {
+  Route::get('/config', 'ConfigController@index')->name('config');
+});
