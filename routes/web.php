@@ -24,3 +24,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/config', 'ConfigController@index')->name('config');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/reports', 'ReportController@index')->name('reports');
