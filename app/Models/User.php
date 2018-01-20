@@ -42,6 +42,17 @@ class User extends Authenticatable
       $new_user->name = $user['name'];
       $new_user->password = Hash::make($user['password']);
       $new_user->email = $user['email'];
+
+      switch ($user['role']) {
+        case 'admin':
+          $new_user->role = 'admin';
+          break;
+
+        default:
+          $new_user->role = 'employee';
+          break;
+      }
+
       return $new_user->save();
     }
 }
