@@ -22,7 +22,7 @@ Route::group(['middleware' => 'can:show-config'], function () {
 });
 
 Route::group(['middleware' => 'can:show-reports'], function () {
-  Route::get('/reports', 'ReportController@index')->name('reports');
+  Route::get('/reports', 'ReportsController@index')->name('reports');
 });
 
 Route::group(['middleware' => 'can:show-dashboard'], function () {
