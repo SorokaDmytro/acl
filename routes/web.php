@@ -27,6 +27,8 @@ Route::get('/reports', 'ReportController@index', function() {
   // can: owners, employee
 })->middleware('can:show-reports');
 
-Route::get('/dashboard', 'DashboardController@index', function() {
-  // can: owners, employee, admin
-})->middleware('can:show-dashboard');
+Route::group(['middleware' => 'can:show-dashboard'], function () {
+  Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+  Route::get('/users/new', 'UsersController@new')->name('new_user');
+  Route::post('/users/create', 'UsersController@create')->name('create_user');
+});

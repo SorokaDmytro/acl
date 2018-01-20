@@ -8,6 +8,8 @@
                 <div class="panel-heading">Dashboard</div>
                 <div class="panel-body">
                   Dashboard
+                  <br>
+                  {{ Html::linkAction('UsersController@new', 'Create a new user') }}
                 </div>
             </div>
         </div>
