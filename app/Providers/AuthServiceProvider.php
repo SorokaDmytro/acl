@@ -60,7 +60,7 @@ class AuthServiceProvider extends ServiceProvider
         return false;
       });
 
-      Gate::define('set-user-role', function() {
+      Gate::define('create-user', function() {
         if (Auth::user()->role == 'owner') {
           return true;
         }

@@ -30,14 +30,12 @@
                       </div>
                     </div>
 
-                    @can('set-user-role')
-                      <div class="form-group">
-                        {!! Form::label('role', 'Role', ['class' => 'col-md-4 control-label']) !!}
-                        <div class="col-md-6">
-                          {!! Form::select('role', ['employee' => 'Employee', 'admin' => 'Admin']) !!}
-                        </div>
+                    <div class="form-group">
+                      {!! Form::label('role', 'Role', ['class' => 'col-md-4 control-label']) !!}
+                      <div class="col-md-6">
+                        {!! Form::select('role', ['employee' => 'Employee', 'admin' => 'Admin']) !!}
                       </div>
-                    @endcan
+                    </div>
 
                     <div class="form-group">
                       <div class="col-md-6 col-md-offset-4 user-submit-btn">

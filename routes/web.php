@@ -19,16 +19,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/config', 'ConfigController@index', function() {
-  // can: owners, admins
-})->middleware('can:show-config');
+Route::group(['middleware' => 'can:show-config'], function () {
+  Route::get('/config', 'ConfigController@index')->name('config');
+});
 
-Route::get('/reports', 'ReportController@index', function() {
-  // can: owners, employee
-})->middleware('can:show-reports');
+Route::group(['middleware' => 'can:show-reports'], function () {
+  Route::get('/reports', 'ReportController@index')->name('report');
+});
 
 Route::group(['middleware' => 'can:show-dashboard'], function () {
   Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+});
+
+Route::group(['middleware' => 'can:create-user'], function () {
   Route::get('/users/new', 'UsersController@new')->name('new_user');
   Route::post('/users/create', 'UsersController@create')->name('create_user');
 });
