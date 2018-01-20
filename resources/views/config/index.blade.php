@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Configuration</div>
                 <div class="panel-body">
-                  Configuration
+                  Here you can configure this app
                 </div>
             </div>
         </div>

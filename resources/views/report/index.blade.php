@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Raports</div>
                 <div class="panel-body">
-                  Raports
+                  You can see raports here
                 </div>
             </div>
         </div>

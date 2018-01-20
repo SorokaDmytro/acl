@@ -12,19 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('application/welcome');
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'can:show-config'], function () {
   Route::get('/config', 'ConfigController@index')->name('config');
 });
 
 Route::group(['middleware' => 'can:show-reports'], function () {
-  Route::get('/reports', 'ReportController@index')->name('report');
+  Route::get('/reports', 'ReportController@index')->name('reports');
 });
 
 Route::group(['middleware' => 'can:show-dashboard'], function () {

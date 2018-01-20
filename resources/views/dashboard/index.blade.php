@@ -7,9 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
                 <div class="panel-body">
-                  Dashboard
-                  <br>
-                  {{ Html::linkAction('UsersController@new', 'Create a new user') }}
+                  Here your dashboard
                 </div>
             </div>
         </div>

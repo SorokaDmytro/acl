@@ -46,6 +46,16 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                            @can('show-reports')
+                              <li><a href="{{ route('reports') }}">Reports</a></li>
+                            @endcan
+                            @can('show-config')
+                              <li><a href="{{ route('config') }}">Configurations</a></li>
+                            @endcan
+                            @can('create-user')
+                              <li><a href="{{ route('new_user') }}">New user</a></li>
+                            @endcan
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} ({{ Auth::user()->role }}) <span class="caret"></span>
