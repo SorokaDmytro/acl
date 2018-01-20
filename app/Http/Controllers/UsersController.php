@@ -14,7 +14,7 @@ class UsersController extends Controller
 
   public function create(Request $request) {
     $user = $request->input('user');
-    if (User::create($user) == true) {
+    if (User::create_account($user) == true) {
       return redirect('/dashboard')->with('message', 'User has been created');
     } else {
       return redirect('/dashboard')->with('message', 'Failed to create user');

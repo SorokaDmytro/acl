@@ -28,7 +28,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public static function create($user) {
+    public static function create_account($user) {
       if (!$user['name'] || !$user['password'] || !$user['email']) {
         return false;
       }
