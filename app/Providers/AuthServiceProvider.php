@@ -46,5 +46,18 @@ class AuthServiceProvider extends ServiceProvider
         }
         return false;
       });
+
+      Gate::define('show-dashboard', function() {
+        if (Auth::user()->role == 'owner') {
+          return true;
+        }
+        if (Auth::user()->role == 'employee') {
+          return true;
+        }
+        if (Auth::user()->role == 'admin') {
+          return true;
+        }
+        return false;
+      });
     }
 }

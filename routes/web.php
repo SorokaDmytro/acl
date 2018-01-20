@@ -19,8 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-
 Route::get('/config', 'ConfigController@index', function() {
   // can: owners, admins
 })->middleware('can:show-config');
@@ -28,3 +26,7 @@ Route::get('/config', 'ConfigController@index', function() {
 Route::get('/reports', 'ReportController@index', function() {
   // can: owners, employee
 })->middleware('can:show-reports');
+
+Route::get('/dashboard', 'DashboardController@index', function() {
+  // can: owners, employee, admin
+})->middleware('can:show-dashboard');
