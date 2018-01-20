@@ -12,28 +12,28 @@
                     <div class="form-group">
                       {!! Form::label('name', 'Username', ['class' => 'col-md-4 control-label']) !!}
                       <div class="col-md-6">
-                        {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('user[name]', null, ['class' => 'form-control']) !!}
                       </div>
                     </div>
 
                     <div class="form-group">
                       {!! Form::label('email', 'E-Mail Address', ['class' => 'col-md-4 control-label']) !!}
                       <div class="col-md-6">
-                        {!! Form::email('email', null, ['class' => 'form-control']) !!}
+                        {!! Form::email('user[email]', null, ['class' => 'form-control']) !!}
                       </div>
                     </div>
 
                     <div class="form-group">
                       {!! Form::label('password', 'Password', ['class' => 'col-md-4 control-label']) !!}
                       <div class="col-md-6">
-                        {!! Form::password('password', ['class' => 'form-control']) !!}
+                        {!! Form::password('user[password]', ['class' => 'form-control']) !!}
                       </div>
                     </div>
 
                     <div class="form-group">
                       {!! Form::label('role', 'Role', ['class' => 'col-md-4 control-label']) !!}
                       <div class="col-md-6">
-                        {!! Form::select('role', ['employee' => 'Employee', 'admin' => 'Admin']) !!}
+                        {!! Form::select('user[role]', ['employee' => 'Employee', 'admin' => 'Admin']) !!}
                       </div>
                     </div>
 
