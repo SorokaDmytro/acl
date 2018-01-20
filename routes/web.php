@@ -20,13 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-// Route::get('/reports', 'ReportController@index')->name('reports');
-// Route::get('/config', 'ConfigController@index')->name('config');
 
-Route::group(['middleware' => 'checkemployeerole'], function () {
-  Route::get('/reports', 'ReportController@index')->name('reports');
-});
+Route::get('/config', 'ConfigController@index', function() {
+  // can: owners, admins
+})->middleware('can:show-config');
 
-Route::group(['middleware' => 'checkadminrole'], function () {
-  Route::get('/config', 'ConfigController@index')->name('config');
-});
+Route::get('/reports', 'ReportController@index', function() {
+  // can: owners, employee
+})->middleware('can:show-reports');

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class ConfigController extends Controller
 {
   public function index() {
+    // $this->authorize('show-config');
     return view('config.index');
   }
 }
