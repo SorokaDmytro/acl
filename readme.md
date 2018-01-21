@@ -1,1 +1,1 @@
-## ACL List (by Dmytro Soroka)
+## ACL by Dmytro Soroka
