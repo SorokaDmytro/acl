@@ -13,6 +13,12 @@
 
           @guest
             <h2>Hi there ;)</h2>
+            <br><br>
+            Owner account access
+            <br>
+            login: owl@test.ru
+            <br>
+            password: 123123
           @else
             <h2>You are logged in!</h2>
           @endguest
